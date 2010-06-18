@@ -6,4 +6,7 @@
 
 {% block content %}
     <h1>Hello {{ person.name }}</h1>
+	{% for field, value in person.items %}
+		{{ field }}, {{ value}} <br />
+	{% endfor %}
 {% endblock %}
