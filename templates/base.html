@@ -1,0 +1,91 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN" "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+	<head>					
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+        {# <meta http-equiv="Cache-Control" content="no-cache"/> #}
+        {# <meta http-equiv="Pragma" content="no-cache"/> #}
+			
+		<title>Cromongo{% block html_title %}{% endblock %}</title>
+		
+		<link rel="icon" href="/static/images/favicon.ico" type="image/gif" />
+		
+		<meta name="robots" content="all,index,follow" />
+		<meta name="keywords" content="" />
+		<meta name="description" content="" />
+
+		<link rel="stylesheet" href="{{MEDIA_URL}}css/import.css" type="text/css" />
+
+		<!--[if IE]>
+			<link rel="stylesheet" href="{{MEDIA_URL}}css/ie.css" type="text/css" />
+		<![endif]-->
+		<!--[if IE 6]>
+			<link rel="stylesheet" href="{{MEDIA_URL}}css/ie6.css" type="text/css" />
+		<![endif]-->
+		<!--[if IE 7]>
+			<link rel="stylesheet" href="{{MEDIA_URL}}css/ie7.css" type="text/css" />
+		<![endif]-->
+		<!--[if IE 8]>
+			<link rel="stylesheet" href="{{MEDIA_URL}}css/ie8.css" type="text/css" />
+		<![endif]-->
+		
+        {# <link rel="stylesheet" type="text/css" media="print" href="{{MEDIA_URL}}css/print.css" /> #}
+				
+		{% block extra_css %}{% endblock %}
+
+	</head>
+	
+	{% load menuism %}
+	
+	<body>
+		<div id="container">
+			<div id="wrapper">
+
+                {# {% include "includes/login_logout_links.html" %} #}
+
+                {# {% include "includes/nav_pri.html" %} #}
+
+                        {#                 {% block breadcrumb %} #}
+                        {#                 <div id="breadcrumb"> #}
+                        {#                  {% if trail %} #}
+                        {# <div class="label">You are here:</div> {% breadcrumb trail %} #}
+                        {#                     {% endif %} #}
+                        {#                 </div> #}
+                        {#                 {% endblock %} #}
+
+
+				<div id="messages">
+                    {% if messages %}
+                    <ul class="message-list">
+                        {% for message in messages %}
+                        <li{% if message.tags %} class="{{ message.tags }}"{% endif %}>{{ message }}</li>
+                        {% endfor %}
+                    </ul>
+                    {% endif %}
+                </div>
+
+				<div id="content">
+                    {% block content %}
+                    <h1>Main content area</h1>
+                    <p> Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+                    {% endblock %}
+				</div>
+                
+    		</div>
+
+		</div>		
+		
+		<div id="footer">
+            <p>Footer here</p>
+		</div>
+
+		<!--JS at the bottom, so that it doesn't block CSS loading -->
+    	<script type="text/javascript" src="{{MEDIA_URL}}js/jquery-1.4.2.min.js"></script>
+        {# <script type="text/javascript" src="{{MEDIA_URL}}js/main.js"></script> #}
+
+		{% block extra_js %} {% endblock %}
+
+        {# <script type="text/javascript"> var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www."); document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E")); </script> #}
+        {# <script type="text/javascript"> try { var pageTracker = _gat._getTracker(""); pageTracker._trackPageview();} catch(err) {}</script> #}
+		
+	</body>
+</html>
