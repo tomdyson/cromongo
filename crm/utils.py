@@ -1,3 +1,5 @@
+import os, sys
+import simplejson as json
 from pymongo import Connection
 
 def get_db():
@@ -7,11 +9,10 @@ def get_db():
     return db
 
 
-
-def get_fields(collection, as_dict=True):
+def populate_default_fields(filename='fixtures/initial_fields.json'):
     """
-    Gets the field objects that reference the given Collection
-    
+    fields will be a Collection that contains details of attributes that other collections use
+
     Fields
      - collection 
      - label
@@ -28,6 +29,23 @@ def get_fields(collection, as_dict=True):
       'type': 'text'.
       'validation': ['is_name', 'is_not_null']
     }
+    """
+
+    f = open(filename, 'r')
+    definitions = f.read()
+
+    db = get_db()
+    definitions_json = json.loads(definitions)
+    out = db.fields.insert(definitions_json)
+    
+    f.close()
+
+
+
+def get_fields(collection, as_dict=True):
+    """
+    Gets the field objects that reference the given Collection
+    
     """
     
     db = get_db()

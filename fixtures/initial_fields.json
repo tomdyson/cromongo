@@ -1,0 +1,27 @@
+{
+    "fields":[    {
+            "collection": "People",
+            "order": 1,
+            "label": "First name",
+            "internal_name": "first_name",
+            "type": "text",
+            "validation": ["is_name", "is_not_null"]
+        },
+        {
+            "collection": "People",
+            "order": 2,
+            "label": "Last name",
+            "internal_name": "last_name",
+            "type": "text",
+            "validation": ["is_name", "is_not_null"]
+        },
+        {
+            "collection": "People",
+            "order": 3,
+            "label": "Email",
+            "internal_name": "email",
+            "type": "text",
+            "validation": ["is_email", "is_not_null"]
+        }
+    ]
+}
