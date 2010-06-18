@@ -9,5 +9,6 @@ urlpatterns = patterns('',
 
     #basic views
     url(r'^',  'crm.views.core.home', { }, name="crm_views_core_home"),
+    url(r'^person/(?P<person_id>[0-9a-z_-]+)/$',  'crm.views.core.person_details', { }, name="crm_views_core_person_details"),
     
 )
