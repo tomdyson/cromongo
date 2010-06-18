@@ -24,8 +24,23 @@ Events
  - sale
  - timestamp
 
+
+ - fields ({'name':'ca})
+
+
 Fields
- - labels
- - names
- - types (text, int, float, list)
- - custom validation rules (1.1)
+ - collection 
+ - label
+ - name
+ - type (text, int, float, list)
+ - custom validation rule (1.1)
+
+
+var field = {
+  'collection': 'People',
+  'order': 1,
+  'label': 'first name',
+  'internal_name': 'first_name',
+  'type': 'text'.
+  'validation': ['is_name', 'is_not_null']
+}
