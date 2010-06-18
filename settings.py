@@ -10,7 +10,7 @@ import django
 FILEROOT = os.path.abspath(os.path.join(os.path.dirname(__file__), '..'))
 
 # The base directory of this project
-PROJECT_DIR = os.path.join(FILEROOT, 'bookabed')
+PROJECT_DIR = os.path.join(FILEROOT, 'cromongo')
 
 #adding our lib folder here for .py files and __init__()ed modules
 sys.path.insert(0, os.path.join(PROJECT_DIR, "lib"))
@@ -84,7 +84,6 @@ SECRET_KEY = 'xg94=c29ut9tamvd*w8oetpu_oj^b2yp9$s8dooy!k=2la+n^+'
 TEMPLATE_LOADERS = (
     'django.template.loaders.filesystem.Loader',
     'django.template.loaders.app_directories.Loader',
-#     'django.template.loaders.eggs.Loader',
 )
 
 MIDDLEWARE_CLASSES = (
@@ -108,9 +107,9 @@ MESSSAGE_STORAGE = 'django.contrib.messages.storage.session.SessionStorage'
 ROOT_URLCONF = 'cromongo.urls'
 
 TEMPLATE_DIRS = (
-    # Put strings here, like "/home/html/django_templates" or "C:/www/django/templates".
-    # Always use forward slashes, even on Windows.
-    # Don't forget to use absolute paths, not relative paths.
+    os.path.join(PROJECT_DIR, 'templates'), #base dir
+    os.path.join(PROJECT_DIR, 'templates', 'crm'), #crm app, natch
+    #os.path.join(PROJECT_DIR, 'templates', 'registration'), #login/out stuff, overriding bundled contrib.auth stuff
 )
 
 INSTALLED_APPS = (
@@ -119,6 +118,5 @@ INSTALLED_APPS = (
     'django.contrib.sessions',
     'django.contrib.sites',
     'django.contrib.messages',
-    # Uncomment the next line to enable the admin:
     'django.contrib.admin',
 )

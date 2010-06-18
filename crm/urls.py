@@ -8,6 +8,6 @@ from django.contrib.auth.decorators import login_required
 urlpatterns = patterns('',
 
     #basic views
-    #url(r'^',  'crm.views.foo.bar', { }, name="crm_views_foo_bar"),
+    url(r'^',  'crm.views.core.home', { }, name="crm_views_core_home"),
     
 )
