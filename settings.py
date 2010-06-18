@@ -1,5 +1,24 @@
 # Django settings for cromongo project.
 
+# Django settings for bookabed project.
+import sys, os
+import django
+
+###########################################################################
+# FILE PATHS
+
+FILEROOT = os.path.abspath(os.path.join(os.path.dirname(__file__), '..'))
+
+# The base directory of this project
+PROJECT_DIR = os.path.join(FILEROOT, 'bookabed')
+
+#adding our lib folder here for .py files and __init__()ed modules
+sys.path.insert(0, os.path.join(PROJECT_DIR, "lib"))
+
+#South (for migrations) lives in /lib/south/south 
+sys.path.insert(0, os.path.join(PROJECT_DIR, "lib", "south"))
+
+
 DEBUG = True
 TEMPLATE_DEBUG = DEBUG
 
