@@ -18,7 +18,6 @@ sys.path.insert(0, os.path.join(PROJECT_DIR, "lib"))
 #South (for migrations) lives in /lib/south/south 
 sys.path.insert(0, os.path.join(PROJECT_DIR, "lib", "south"))
 
-
 DEBUG = True
 TEMPLATE_DEBUG = DEBUG
 
@@ -119,6 +118,8 @@ INSTALLED_APPS = (
     'django.contrib.sites',
     'django.contrib.messages',
     'django.contrib.admin',
+    'crm',
+    'south'
 )
 
 try:
