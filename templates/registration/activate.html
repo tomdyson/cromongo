@@ -1,0 +1,18 @@
+{% extends "registration/registration_base.html" %}
+
+{% block html_title %} Account activation {% endblock %}
+
+{% block content %}
+<div id="activation_wrapper">
+    {% if account or request.user.is_authenticated %}
+		<h1>You've activated your account!</h1>
+    {% else %}
+		<h1>Activation failed</h1>
+		<div class="content">
+        	<p>Don't worry. Two things may have caused this, and it's easy to solve:</p>
+			<p>1. The activation link was incomplete or incorrect. Did you copy and paste all of it from the activation email? Did your email program split it into two lines? Please try copying and pasting again.</p>
+			<p>2. The activation key we sent you has already been used or has expired. Keys are only valid for {{ expiration_days }} days. Please <a href="{% url registration_register %}">sign up</a> for a new one.</p>
+		</div>
+    {% endif %}
+</div>
+{% endblock %}

@@ -1,0 +1,36 @@
+	{% extends "registration/registration_base.html" %}
+
+{% block html_title %}Login{% endblock %}
+
+{% block content %}
+<div id="login_or_out_wrapper">
+    <h1>Log in</h1>
+    {% if form.errors %}
+        <p class="error">Please correct the errors below:</p>
+        {{ form.non_field_errors }}
+    {% endif %}
+    <form id="login_form" class="" method="post" action="?next=/">
+        {% csrf_token %}
+        <p>
+            <label for="{{ form.username.auto_id }}">
+                Username {% if form.username.field.required %}<span></span>{% endif %}
+            </label>
+            {{ form.username }}
+            {% if form.username.errors %}<span class="errormessage">{{ form.username.errors }}</span>{% endif %}
+        </p>
+        <p>
+            <label for="{{ form.password.auto_id }}">
+                {{ form.password.label }}{% if form.password.field.required %}<span></span>{% endif %}
+            </label>
+            {{ form.password }}
+            {% if form.password.errors %}<span class="errormessage">{{ form.password.errors }}</span>{% endif %}
+        </p>
+		</p>
+		<div id="form-action">
+			<input id="login-button" type="submit" name="login" value="Log in" /> 
+			<a class="password-reset-link" href="{% url auth_password_reset %}?ap={{request.REQUEST.ap}}&b={{request.REQUEST.b}}">Forgotten your password?</a>
+        </div>
+    </form>
+	</div>
+</div>
+{% endblock %}

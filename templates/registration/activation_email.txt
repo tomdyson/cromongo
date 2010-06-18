@@ -1,0 +1,7 @@
+Thank you for signing up. 
+
+To activate your account, click the link below or copy and paste it into your browser's address bar.
+
+http://{{hostname}}/accounts/activate/{{ activation_key }}/
+
+If you have received this email in error, don't worry - you do not need to do anything; you will not receive any more emails from us and the account will expire automatically in {{expiration_days}} days.{% endblocktrans %}

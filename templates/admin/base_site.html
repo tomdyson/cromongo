@@ -1,0 +1,25 @@
+{% extends "admin/base.html" %}
+{% load i18n %}
+
+{% block title %}{{ title|escape }} | {% trans 'Cromongo administration' %}{% endblock %}
+
+	
+{% block extrahead %}
+{{ block.super }}
+{# <script type="text/javascript" src ="{{MEDIA_URL}}js/jquery-1.4.2.min.js"></script> #}
+{% endblock %}
+
+
+{% block branding %}
+{# <img style="float: right; margin-top:35px;padding-bottom:10px;padding-right:10px" src="{{MEDIA_URL}}admin_images/foo.png"/> #}
+<h1 id="site-name">{% trans 'Cromongo administration' %}</h1>
+{% endblock %}
+
+{# {% block nav-global %} #}
+{# {% if user.is_staff %} #}
+{# <ul> #}
+{#  <li><a href="{% url backoffice_act_as_agency_select %}">Choose a Provider to act as</a></li> #}
+{#  <li><a href="/backoffice/">Backoffice home</a></li> #}
+{# </ul> #}
+{# {% endif %} #}
+{# {% endblock %} #}
