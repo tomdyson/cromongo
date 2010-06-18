@@ -8,7 +8,7 @@ def get_db():
 
 
 
-def get_fields(Collection):
+def get_fields(collection, as_dict=True):
     """
     Gets the field objects that reference the given Collection
     
@@ -31,3 +31,12 @@ def get_fields(Collection):
     """
     
     db = get_db()
+    
+    fields = db.fields.find({'collection':collection})
+    
+    if as_dict:
+        fields = dict(fields)
+    
+    return fields
+    
+    
