@@ -1,0 +1,31 @@
+People
+ - is crm user (duplicates with django user)
+ - contact details (some defaults)
+ - organisation(s)?
+ - location
+ - photo
+ - bio
+ - tags?
+ - relationship (to you) (default types: client, supplier, colleague, partner...)
+ - other attributes, including list values
+
+Organisations
+ - name
+ - location
+
+Events
+ - type
+ - communication
+	- type:
+		- phone call
+		- email
+		- other
+	- in-bound / out-bound
+ - sale
+ - timestamp
+
+Fields
+ - labels
+ - names
+ - types (text, int, float, list)
+ - custom validation rules (1.1)

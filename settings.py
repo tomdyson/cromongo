@@ -120,3 +120,10 @@ INSTALLED_APPS = (
     'django.contrib.messages',
     'django.contrib.admin',
 )
+
+try:
+    from local_settings import *
+except ImportError:
+    import sys
+    print "Please create a local_settings file containing your local configuration (e.g. database and email conf)"
+    sys.exit(1)
